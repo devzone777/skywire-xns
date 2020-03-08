@@ -1,4 +1,4 @@
-# skywire-xns
+# Skywire XNS
 **Author:** Ty Moses @cryptkeeper_mod
 
 **Program:**
