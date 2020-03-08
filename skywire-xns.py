@@ -1,6 +1,15 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
+################################################################################
+# Author: Ty Moses @cryptkeeper_mod
+#
+# Program:
+#   Install skywire-p2p on Linux running python 2.7/3.0 and zmq
+# SKY Donation: 2MJdrNB21FGjXzBViqd2aomVRN6j7GT6ufN
+# 
+################################################################################
+
 import readline
 import sys
 from optparse import OptionParser
