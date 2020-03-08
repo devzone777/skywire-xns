@@ -5,8 +5,7 @@
 # Program:
 #   Install skywire-p2p on Linux running python 2.7/3.0 and zmq
 # SKY Donation: 2MJdrNB21FGjXzBViqd2aomVRN6j7GT6ufN
-# 
-################################################################################
+
 ===============================================================================
 Skywire XNS is an experimental name server for Skywire domain/key namespace handling.
 The core objective is to provide an immutable, censorship-proof, and infallible system
