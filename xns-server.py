@@ -1,5 +1,5 @@
 """
-Skywire XNS requires zmq
+Skywire XNS: requires zmq
 """
 from twisted.names import dns, server, client, cache
 from twisted.application import service, internet
