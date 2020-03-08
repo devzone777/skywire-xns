@@ -3,6 +3,9 @@
 
 **Program:**
 Install skywire-p2p on Linux running python 2.7/3.0 and zmq
+Stable on Ubuntu 18.04 LTS and 16.04 LTS although the should
+be no issues on Raspbian, Armbian, Arch Linux, Debian, CentOS.
+Please open an issue if you have a problem with it.
 
 **SKY Donation:** 2MJdrNB21FGjXzBViqd2aomVRN6j7GT6ufN
 
