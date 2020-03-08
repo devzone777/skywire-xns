@@ -14,6 +14,7 @@ system for hostnames and records on the Skywire global network.
 Requires Self-Signed SSL Certificate and installation of ZMQ
 
 
-Some elements of the source code may be licensed under:
-GPLv3
+Some elements of the source code may be licensed under
+GPLv3 in the future and will be noted as such within 
+the source code if that is the case.
 
