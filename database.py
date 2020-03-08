@@ -21,8 +21,8 @@ class Database(object):
 
         c = sqlite3.connect('./db')
 
-        c.execute("create table if no nodes exist (ip text, port text)")
-        c.execute("create table if no domains exist "
+        c.execute("create table if not exists nodes (ip text, port text)")
+        c.execute("create table if not exists domains "
                   "(domain text, ip text, key text, ttl text, timestamp text)")
         c.commit()
         for row in c.execute("select * from nodes"):
