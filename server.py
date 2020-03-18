@@ -99,7 +99,7 @@ class Server(StoppableThread):
                         msg += "\n%s %s" % (ip, port)
                     self.sender.send_message(msg, address)
                 elif "DOMAINS" in msg:
-                    print("all the domains I know!")
+                    print("all known domains")
                     msg = "DATA DOMAINS"
                     for (domain, record) in self.database.get_domains().items():
                         # "domain ip ttl timestamp key"
@@ -111,7 +111,7 @@ class Server(StoppableThread):
                     self.sender.send_message(msg, address)
             elif "ACCEPT" in msg:
                 if "CONNECTION" in msg:
-                    print("node accepted the connection")
+                    print("connection accepted by node")
                     port = int( re.findall(r'PORT (\d+)', msg)[0] )
                     self.database.add_node(address, port)
                     self.sender.send_message("REQUEST NODES", address)
@@ -141,7 +141,7 @@ class Server(StoppableThread):
         self.sender.send_message("REQUEST CONNECTION\nPORT %s" % listen_port,
                           host,
                           port)
-        # that's the port this server is listening on
+           # port this server is listening on
 
     def register_domain(self, domain, ip, key, ttl = default_ttl):
         # put in db
