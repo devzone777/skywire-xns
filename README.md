@@ -12,6 +12,8 @@ Please open an issue if you have a problem with it.
 **SKY Donation:** 2MJdrNB21FGjXzBViqd2aomVRN6j7GT6ufN
 
 =============================================================================
+
+
 Skywire XNS is an experimental name server for Skywire domain/key namespace handling.
 The core objective is to provide an immutable, censorship-proof, and infallible
 system for hostnames and records on the Skywire global network.
