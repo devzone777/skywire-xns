@@ -4,7 +4,7 @@
 **Program:**
 Install skywire-xns on Linux running python 2.7 (minimum), zmq, openssl, 
 and twisted. Stable on Ubuntu 18.04 LTS and 16.04 LTS 
-although the should be no issues on Raspbian, Armbian, 
+although there should be no issues on Raspbian, Armbian, 
 Arch Linux, Debian, CentOS. 
 
 Please open an issue if you have a problem with it.
