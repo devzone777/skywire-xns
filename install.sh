@@ -22,9 +22,7 @@ apt-get install python-twisted-core -y
 apt-get install ufw -y
 apt-get install screen -y
 apt-get install openssl -y
-apt-get install eog -y
-#apt-get install <package name> -y
-#apt-get install <package name> -y
+
 
 #Install SSL Cert (User Prompt, use defaults)
 echo -e "\e[38;5;166mCreating SSL certificate\e[0m"
