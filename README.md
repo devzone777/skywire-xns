@@ -1,5 +1,4 @@
 # Skywire XNS
-**Author:** Ty Moses @cryptkeeper_mod
 
 **Program:**
 Install skywire-xns on Linux running python 2.7 (minimum), zmq, openssl, 
@@ -9,7 +8,6 @@ Arch Linux, Debian, CentOS.
 
 Please open an issue if you have a problem with it.
 
-**SKY Donation:** 2MJdrNB21FGjXzBViqd2aomVRN6j7GT6ufN
 
 =============================================================================
 
