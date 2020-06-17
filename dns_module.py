@@ -22,8 +22,8 @@ class DNSModule(StoppableThread):
         poller.register(socket, zmq.POLLIN)
 
         while not self.stopped():
-            # timeout so we can free the socket and quit the program
-            # if necessary; in ms
+            # timeout to free the socket and quit the program
+            # when necessary; in ms
             socks = dict(poller.poll(timeout=100))
             
             if socket in socks and socks[socket] == zmq.POLLIN:
@@ -34,4 +34,4 @@ class DNSModule(StoppableThread):
                     socket.send("%s %d" % (domain.ip, domain.ttl))
                 else:
                     socket.send("0.0.0.0 %d" % default_ttl)
-                    # that domain doesn't exist
+                    # domain not found
