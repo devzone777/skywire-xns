@@ -89,7 +89,7 @@ class Server(StoppableThread):
                     port = int( re.findall(r'PORT (\d+)', msg)[0] )
 
                     self.database.add_node(address, port)                
-                    print("have new node: %s:%s" % (address, port))
+                    print("\033[32mhave new node: \033[0m%s:%s" % (address, port))
                     self.sender.send_message("REQUEST NODES", address)
                     self.sender.send_message("REQUEST DOMAINS", address)
                 elif "NODES" in msg:
@@ -171,8 +171,8 @@ class Server(StoppableThread):
                 ssl_socket = ssl.wrap_socket(sck,
                                              server_side=True,
                                              certfile="server.pem",
-                                             keyfile="server.pem",
-                                             ssl_version=ssl.PROTOCOL_SSLv3)
+                                             keyfile="server.pem")
+                                             # ssl_version=ssl.PROTOCOL_SSLv3)
                 self.handle_data(ssl_socket, addr[0])
             except socket.timeout:
                 pass

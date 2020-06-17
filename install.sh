@@ -30,7 +30,7 @@ openssl req -new -x509 -keyout server.pem -out server.pem -days 365 -nodes
 
 #Configure Twisted
 # Installs Twisted if needed, then starts a xns-server in a twisted instance,
-# listening on port 8001 and 8002.
+# listening on port 8003 and 8004.
 echo -e "\e[38;5;11mOpening ports for Skywire XNS\e[0m"
 
 ufw enable

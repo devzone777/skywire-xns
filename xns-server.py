@@ -1,5 +1,5 @@
 """
-Skywire XNS: requires zmq and python-twisted-core
+Skywire XNS: requires python-zmq and python-twisted-core
 """
 from twisted.names import dns, server, client, cache
 from twisted.application import service, internet
@@ -9,7 +9,7 @@ import time
 from twisted.internet import defer
 
 skywire_xns_server_ip = "localhost"
-skywire_xns_server_port = 8002
+skywire_xns_server_port = 8003
 
 class CacheEntry(object):
     def __init__(self, ip, ttl):
