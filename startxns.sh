@@ -3,4 +3,4 @@
 
 twistd -y xns-server.py
 echo -e "\033[32mSkywire XNS is now running\n\033[0m"
-python skywire-xns.py
+screen -dmS skywire-xns ./skywire-xns.py
