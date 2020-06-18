@@ -13,6 +13,9 @@ echo -e "\e[96;5mWelcome to the Skywire XNS Installer\e[25m"
 
 echo -e "\e[31mInstalling dependancies\e[0m"
 
+pkill -f xns-server  # Stop skywire-xns if running
+pkill -f skywire-xns # already
+
 apt-get update  # To get the latest package lists
 apt-get install curl -y
 apt-get install wget -y
