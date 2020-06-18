@@ -86,7 +86,7 @@ class App(object):
         daemon_mode = self.parse_commandline()
         self.start_server()
         if not daemon_mode:
-            print( """Welcome to this Skywire XNS client.
+            print( """Welcome to the Skywire XNS CLI client.
     To run in daemon mode, use '-d' to start or type 'daemon'.
     To see command list, type 'help'""" )
 
