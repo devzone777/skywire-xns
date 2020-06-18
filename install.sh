@@ -37,8 +37,9 @@ openssl req -new -x509 -keyout server.pem -out server.pem -days 365 -nodes
 echo -e "\e[38;5;11mOpening ports for Skywire XNS\e[0m"
 
 ufw enable
-ufw allow 8001
-ufw allow 8002
+ufw allow 8003
+ufw allow 8004
+ufw allow 22
 ufw reload
 
 
@@ -51,5 +52,5 @@ kill -9 `ps -ef | grep 'xns-server.py'  | grep -v grep | awk '{print $2}'`
 twistd -y xns-server.py
 screen -dmS Skywire-XNS ./skywire-xns.py
 
-echo -e "\e[38;5;10mSkywire XNS is now installed and running\nUse 'screen -ls' to find PID\nthen use 'screen -r PID'\nto enter Skywire XNS CLI console\e[0m"
+echo -e "\e[38;5;10mSkywire XNS is now installed and running on port 8003\nUse 'screen -ls' to find PID\nthen use 'screen -r PID'\nto enter Skywire XNS CLI console\e[0m"
 
