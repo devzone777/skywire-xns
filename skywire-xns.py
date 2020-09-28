@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-# Author: Ty Moses @cryptkeeper_mod
+# 
 #
 # Program:
-#   Install skywire-xns on Linux running python 2.7/3.0 and zmq
-# SKY Donation: 2MJdrNB21FGjXzBViqd2aomVRN6j7GT6ufN
+#   Install skywire-xns on Linux running python 2.7/3.0 and python-zmq
+# 
 # 
 ################################################################################
 
@@ -86,13 +86,13 @@ class App(object):
         daemon_mode = self.parse_commandline()
         self.start_server()
         if not daemon_mode:
-            print( """Welcome to the Skywire XNS CLI client.
+            print( """\033[32mWelcome to the Skywire XNS CLI client.
     To run in daemon mode, use '-d' to start or type 'daemon'.
-    To see command list, type 'help'""" )
+    To see command list, type 'help'\033[0m""" )
 
             while True:
                 try:
-                    io = raw_input("~> ")
+                    io = raw_input("==>> ")
                     if io == "help":
                         self.print_help()
                     elif io == "daemon":

@@ -41,7 +41,7 @@ class MessageSender(StoppableThread):
             try:
                 ssl_sock.connect((host, port))
             except socket.error:
-                print("host %s doesn't accept connection" % host)
+                print("host %s refused connection" % host)
                 return
             msg = "SKYWIRE-XNS 1.0\n" + msg
 
@@ -80,26 +80,26 @@ class Server(StoppableThread):
     def handle_message(self, msg, socket, address):
         if self.isXNSMessage(msg):
             if "REQUEST" in msg:
-                print "requesting", 
+                print "\033[32mrequesting\033[0m", 
                 if "CONNECTION" in msg:
-                    print("a connection!")
+                    print("\033[32ma connection request!\033[0m")
                     self.sender.send_message("ACCEPT CONNECTION\nPORT %d"
                                              % listen_port,
                                              address)
                     port = int( re.findall(r'PORT (\d+)', msg)[0] )
 
                     self.database.add_node(address, port)                
-                    print("\033[32mhave new node: \033[0m%s:%s" % (address, port))
+                    print("\033[32mnew node accepted: \033[0m%s:%s" % (address, port))
                     self.sender.send_message("REQUEST NODES", address)
                     self.sender.send_message("REQUEST DOMAINS", address)
                 elif "NODES" in msg:
-                    print("all known nodes")
+                    print("\033[32mall known nodes\033[0m")
                     msg = "DATA NODES"
                     for (ip, port) in self.database.get_nodes().items():
                         msg += "\n%s %s" % (ip, port)
                     self.sender.send_message(msg, address)
                 elif "DOMAINS" in msg:
-                    print("all known domains")
+                    print("\033[32mall known domains\033[0m")
                     msg = "DATA DOMAINS"
                     for (domain, record) in self.database.get_domains().items():
                         # "domain ip ttl timestamp key"
@@ -111,15 +111,15 @@ class Server(StoppableThread):
                     self.sender.send_message(msg, address)
             elif "ACCEPT" in msg:
                 if "CONNECTION" in msg:
-                    print("connection accepted by node")
+                    print("\033[32mconnection accepted by node\033[0m")
                     port = int( re.findall(r'PORT (\d+)', msg)[0] )
                     self.database.add_node(address, port)
                     self.sender.send_message("REQUEST NODES", address)
                     self.sender.send_message("REQUEST DOMAINS", address)
             elif "DATA" in msg:
-                print "got",
+                print "\033[32mgot\033[0m",
                 if "NODES" in msg:
-                    print("nodes")
+                    print("\033[32mlist of nodes\033[0m")
                     for l in msg.split('\n')[2:]:
                         n = l.split(' ')
 
@@ -131,7 +131,7 @@ class Server(StoppableThread):
                                               n[0],
                                               int(n[1]))
                 elif "DOMAINS" in msg:
-                    print("domains")
+                    print("\033[32mlist of domains\033[0m")
                     for l in msg.split('\n')[2:]:
                         n = l.split(' ')
                         self.database.add_domain(n[0], n[1], n[2], n[3], n[4]) 
