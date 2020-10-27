@@ -111,7 +111,7 @@ class Server(StoppableThread):
                     self.sender.send_message(msg, address)
             elif "ACCEPT" in msg:
                 if "CONNECTION" in msg:
-                    print("connection accepted by node")
+                    print("connection accepted by visor")
                     port = int( re.findall(r'PORT (\d+)', msg)[0] )
                     self.database.add_node(address, port)
                     self.sender.send_message("REQUEST NODES", address)
